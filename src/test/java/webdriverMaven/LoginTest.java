@@ -2,8 +2,6 @@ package webdriverMaven;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
@@ -16,16 +14,16 @@ public class LoginTest {
 	@BeforeSuite
 	public void setUp() {
 		
-		//WebDriver driver = new FirefoxDriver();
 		driver = new SafariDriver();
 		
 	}
 	
 	@Test
-	public void doLogin() {
+	public void doLogin() throws InterruptedException {
 		
 		driver.get("https://login.yahoo.com");
 		driver.findElement(By.id("login-username")).sendKeys("adrian.gramisteanu@gmail.com");
+		Thread.sleep(2000);
 		driver.findElement(By.id("login-signin")).click();
 	}
 	
