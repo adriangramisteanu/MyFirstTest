@@ -25,6 +25,11 @@ public class LoginTest {
 		driver.findElement(By.id("login-username")).sendKeys("adrian.gramisteanu@gmail.com");
 		Thread.sleep(2000);
 		driver.findElement(By.id("login-signin")).click();
+		/*
+		 * 
+		 * added new comments
+		 * 
+		 */
 	}
 	
 	@AfterSuite
